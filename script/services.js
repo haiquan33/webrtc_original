@@ -198,7 +198,7 @@ function loadLocalStream(muted) {
   navigator.getUserMedia({ "audio": true, "video": true }, function (stream) {
     localStream = stream;
     var selfView = document.getElementById("selfView");
-    selfView.src = URL.createObjectURL(stream);
+    selfView.srcObject = stream;
     selfView.muted = muted;
   }, logError);
 }
